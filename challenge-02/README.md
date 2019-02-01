@@ -5,28 +5,37 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
+function soma(a , b) {
+    return a + b;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
-
+var total = soma(2+8)+5;
 // Qual o valor atualizado dessa variável?
 ?
-
+//15
 // Declare uma nova variável, sem valor.
 ?
-
+var myvar;
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
 ?
-
+function  changeMyVar() {
+    myvar = "newValor";
+    return "O valor da variável agora é " + myvar;
+}
 // Invoque a função criada acima.
 ?
+changeMyVar();
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+/* O valor da variável agora é newValor;
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -36,19 +45,26 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
-
+function calcula(a, b ,c) {
+    if(!a || !b || !c) {
+        return "Preencha todos os valores corretamente!";
+    }
+    return a*b*c + 2;
+}
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
-
+calcula(2,3);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+//Preencha todos os valores corretamente!
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
-
+calcula(2,3,1);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+// 8
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -59,7 +75,23 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
-
+function calcula(a, b ,c) {
+    if(a && b && c) {
+       return (a+b)/c;
+    } else if(a && b) {
+        return a + b;
+    }  else if(a) {
+        return a;
+    } else if(!a && !b && !c){
+         return false;
+    }
+    return null;
+}
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+
+calcula(3, 5 , 2); // 4
+calcula(3, 5); // 8
+calcula(3); // 3
+calcula(); // false
 ```

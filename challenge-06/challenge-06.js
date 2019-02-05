@@ -13,8 +13,8 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-
-console.log( 'Times que estão participando do campeonato:', teams );
+var teams = ['Bahia', 'Fortaleza', 'Ferroviario', 'Ceará', 'Vitoria'];
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -33,19 +33,31 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 // ?
-
+function showTeamPosition(posicao) {
+  if (posicao >= 1 && posicao <= 5) {
+    return "O time que está em " + posicao + " lugar é o " + teams[posicao - 1] +
+      ".";
+  }
+  return "Não temos a informação do time que está nessa posição.";
+}
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 // ?
-
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(7));
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 // ?
-
+var i = 20;
+while (i <= 30) {
+  console.log(++i);
+}
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -59,8 +71,33 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 // ?
-
+function convertToHex(cor) {
+  var hexa = "";
+  switch (cor) {
+    case "gray":
+      hexa = "FDASAEE";
+      break;
+    case "red":
+      hexa = "FF0000";
+      break;
+    case "black":
+      hexa = "000000";
+      break;
+    case "white":
+      hexa = "FFFFFF";
+      break;
+    default:
+      return "Não temos o equivalente hexadecimal para " + cor + ".";
+  }
+  return "O hexadecimal para a cor " + cor + " é " + hexa + ".";
+}
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 // ?
+
+console.log(convertToHex("red"));
+console.log(convertToHex("black"));
+console.log(convertToHex("white"));
+console.log(convertToHex("gray"));
+console.log(convertToHex("blue"));
